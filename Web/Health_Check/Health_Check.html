@@ -1,10 +1,177 @@
-/*
-EX-health-check
-
-應用 html form 模擬一個健康資訊輸入的頁面，須包含姓名、身高、體重、日常運動（條列選項）、生日、起床時間、就寢時間、喝水量、三餐的飲食習慣等
-
-身高體重必須防呆
-充分應用 form 的元素來做輸入，不要單純用 text 的輸入
-三餐的飲食習慣請發揮創意（及設計）來進行輸入
-目前此表單僅做模擬，提交後不會有動作
-*/
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8"/>
+        <title> Health Check by D1149593 </title>
+    </head>
+    <style>
+        h3{text-align: center; height: 0px;}
+        h4{height: 0px; text-align: center;}
+        .first_block{text-align: center;}
+        .second_block{text-align: center;}
+        .third_block{display: flex; align-items: flex-start; justify-content: center;}
+        .fourth_block{display: flex; align-items: flex-start; justify-content: center;}
+        .fifth_block{display: flex; align-items: flex-start; justify-content: center;}
+    </style>
+    <body style="background-color: rgb(190, 200, 255);">
+        <h2 style="text-align: center; color: darkblue;"> Health Check Form </h2>
+        <form>
+            <fieldset style="margin: auto; width: 600px;">
+                <legend> Basic Data </legend>
+                <div class="first_block">
+                    <label for="name"> <b> Name: </b> </label>
+                    <input type="text" id="name" name="name" value="" required>
+                    <label for="birthday"> <b> Birthday: </b> </label>
+                    <input type="date" id="birthday" name="birthday" value="" required> <br>
+                    <br>
+                    <label for="height"> <b> Height (cm): </b> </label>
+                    <input type="number" id="height" name="height" max="272" min="56" value="" required>
+                    <label for="weight"> <b> Weight (kg): </b> </label>
+                    <input type="number" id="weight" name="weight" max="635" min="2" value="" required>
+                </div>
+            </fieldset>
+            <br>
+            <fieldset style="margin: auto; width: 600px;">
+                <legend> Health Investigation </legend>
+                <div class="second_block">
+                    <label for="wake_time"> <b> Wake Time: </b> </label>
+                    <input type="time" id="wake_time" name="wake_time" value="" required>
+                    <label for="sleep_time"> <b> Sleep Time: </b> </label>
+                    <input type="time" id="sleep_time" name="sleep_time" value="" required>
+                </div>
+                <br>
+                <div style="text-align: center;">
+                    <label> <b> Amount of water you drink (ml) </b> </label> <br>
+                    <input type="range" id="water" value="0" min="0" max="2000" step="10" oninput="this.nextElementSibling.value = this.value">
+                    <output> 0 </output> <br>
+                </div>
+                <h3> <b> Daily Exercise </b> </h3>
+                <div class="third_block">
+                    <div style="width: 110px;">
+                        <h4> Ball Sports </h4>
+                        <input type="checkbox" value="">
+                        <label for="badminton"> Badminton </label> <br>
+                        <input type="checkbox" value="">
+                        <label for="baseball"> Baseball </label> <br>
+                        <input type="checkbox" value="">
+                        <label for="basketball"> Basketball </label> <br>
+                        <input type="checkbox" value="">
+                        <label for="football"> Football </label> <br>
+                        <input type="checkbox" value="">
+                        <label for="soccer"> Soccer </label> <br>
+                        <input type="checkbox" value="">
+                        <label for="softball"> Softball </label> <br>
+                        <input type="checkbox" value="">
+                        <label for="table tennis"> Table Tennis </label> <br>
+                        <input type="checkbox" value="">
+                        <label for="tennis"> Tennis </label> <br>
+                        <input type="checkbox" value="">
+                        <label for="volleyball"> Volleyball </label>
+                    </div>
+                    <div style="width: 110px;">
+                        <h4> Water Sports </h4>
+                        <input type="checkbox" value="">
+                        <label for="diving"> Diving </label> <br>
+                        <input type="checkbox" value="">
+                        <label for="surving"> Surfing </label> <br>
+                        <input type="checkbox" value="">
+                        <label for="swimming"> Swimming </label>
+                    </div>
+                    <div style="width: 110px;">
+                        <h4> Land Sports </h4>
+                        <input type="checkbox" value="">
+                        <label for="athletics"> Athletics </label> <br>
+                        <input type="checkbox" value="">
+                        <label for="boxing"> Boxing </label> <br>
+                        <input type="checkbox" value="">
+                        <label for="cycling"> Cycling </label> <br>
+                        <input type="checkbox" value="">
+                        <label for="hiking"> Hiking </label> <br>
+                    </div>
+                </div>
+                <h3> <b> Diet Habits </b> </h3>
+                <div class="fourth_block">
+                    <div>
+                        <h4> Breakfast </h4>
+                        <select>
+                            <option value=""> Preferred Culinary Method </option>
+                            <option value="boiled"> Boiled </option>
+                            <option value="broil"> Broil </option>
+                            <option value="deep-fried"> Deep-fried </option>
+                            <option value="pan-fried"> Pan-fried </option>
+                            <option value="poached"> Poached </option>
+                            <option value="stir-fried"> Stir-fried </option>
+                        </select>
+                        <p style="height: 10px;"></p> 
+                        <input type="checkbox" value="bitter">
+                        <label for="bitter"> Bitter </label> <br>
+                        <input type="checkbox" value="umami">
+                        <label for="umami"> Unami </label> <br>
+                        <input type="checkbox" value="salty">
+                        <label for="salty"> Salty </label> <br>
+                        <input type="checkbox" value="sour">
+                        <label for="sour"> Sour </label> <br>
+                        <input type="checkbox" value="sweet">
+                        <label for="sweet"> Sweet </label> <br>
+                    </div>
+                    <div>
+                        <h4> Lunch </h4>
+                        <select>
+                            <option value=""> Preferred Culinary Method </option>
+                            <option value="boiled"> Boiled </option>
+                            <option value="broil"> Broil </option>
+                            <option value="deep-fried"> Deep-fried </option>
+                            <option value="pan-fried"> Pan-fried </option>
+                            <option value="poached"> Poached </option>
+                            <option value="stir-fried"> Stir-fried </option>
+                        </select>
+                        <h4> Flavor Preferences </h4>
+                        <input type="checkbox" value="bitter">
+                        <label for="bitter"> Bitter </label> <br>
+                        <input type="checkbox" value="umami">
+                        <label for="umami"> Unami </label> <br>
+                        <input type="checkbox" value="salty">
+                        <label for="salty"> Salty </label> <br>
+                        <input type="checkbox" value="sour">
+                        <label for="sour"> Sour </label> <br>
+                        <input type="checkbox" value="sweet">
+                        <label for="sweet"> Sweet </label> <br>
+                    </div>
+                    <div>
+                        <h4> Dinner </h4>
+                        <select>
+                            <option value=""> Preferred Culinary Method </option>
+                            <option value="boiled"> Boiled </option>
+                            <option value="broil"> Broil </option>
+                            <option value="deep-fried"> Deep-fried </option>
+                            <option value="pan-fried"> Pan-fried </option>
+                            <option value="poached"> Poached </option>
+                            <option value="stir-fried"> Stir-fried </option>
+                        </select>
+                        <p style="height: 10px;"> </p>
+                        <input type="checkbox" value="bitter">
+                        <label for="bitter"> Bitter </label> <br>
+                        <input type="checkbox" value="umami">
+                        <label for="umami"> Unami </label> <br>
+                        <input type="checkbox" value="salty">
+                        <label for="salty"> Salty </label> <br>
+                        <input type="checkbox" value="sour">
+                        <label for="sour"> Sour </label> <br>
+                        <input type="checkbox" value="sweet">
+                        <label for="sweet"> Sweet </label> <br>
+                    </div>
+                </div>
+                <h4> Mealtime </h4>
+                <div class="fifth_block">
+                    <input type="time" id="breakfast_time" name="breakfast_time" value="" required style="width: 170px;">
+                    <input type="time" id="lunch_time" name="lunch_time" value="" required style="width: 170px;">
+                    <input type="time" id="dinner_time" name="dinner_time" value="" required style="width: 170px;">
+                </div>
+                <br>
+                <div style="text-align: center;">
+                    <input type="submit" value="Submit">
+                </div>
+            </fieldset>
+        </form>
+    </body>
+</html>
