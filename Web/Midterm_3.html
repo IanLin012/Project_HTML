@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        div.gallery {margin: 5px; border: 1px solid #ccc; float:left; width: 180px;}
+        div.gallery:hover {border: 1px solid #777;}
+        div.gallery img {width: 100%; height: 220px; opacity: 0.7;}
+        div.desc {padding: 15px; text-align: center;}
+        body {width: 600px;}
+    </style>
+    <script>
+        characters = ["孫悟空-少年期", "龜仙人", "孫悟飯", "桃白白", "孫悟空-前期", "孫悟空-中期"];
+        img_urls = ["http://img.yes-news.com/201502/ffef4eda.jpg",
+                    "http://img.yes-news.com/201502/b9461ecb.jpg",
+                    "http://img.yes-news.com/201502/c0e2da6f.jpg",
+                    "http://img.yes-news.com/201502/03b96611.jpg",
+                    "http://img.yes-news.com/201502/e079dd22.jpg",
+                    "http://img.yes-news.com/201502/c6812f95.jpg",
+        ];
+    function show() {
+        for(let i=0; i<5; i++) {
+            console.log(characters[i]);
+        }
+        for(let i=0; i<5; i++) {
+            console.log(img_urls[i]);
+        }
+        
+    }
+    </script>
+</head>
+<body>
+    <h2> 人物 </h2>
+    <button onclick="show()"> 人物上場 </button>
+    <br>
+    <div class="gallery">
+        <img id="img0" src="">
+        <div id="desc0" class="desc"> </div>
+    </div>
+    <div class="gallery">
+        <img id="img1" src="">
+        <div id="desc1" class="desc"> </div>
+    </div>
+    <div class="gallery">
+        <img id="img2" src="">
+        <div id="desc2" class="desc"> </div>
+    </div>
+    <div class="gallery">
+        <img id="img3" src="">
+        <div id="desc3" class="desc"> </div>
+    </div>
+    <div class="gallery">
+        <img id="img4" src="">
+        <div id="desc4" class="desc"> </div>
+    </div>
+    <div class="gallery">
+        <img id="img5" src="">
+        <div id="desc5" class="desc"> </div>
+    </div>
+</body>
