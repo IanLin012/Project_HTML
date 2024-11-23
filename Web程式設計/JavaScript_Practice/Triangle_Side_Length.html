@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> 3.1.2 </title>
+        <script>
+            function trijudge() {
+                let s1 = document.getElementById("sideLen1").value;
+                let s2 = document.getElementById("sideLen2").value;
+                let s3 = document.getElementById("sideLen3").value;
+                if((s1 + s2 > s3) && (s2 + s3 > s1) && (s3 + s1 > s2)) {
+                    if(s1 == s2 && s2 == s3 && s3 == s1) {
+                        document.getElementById("triangle").innerHTML = "正三角形";
+                    }
+                    else if(((s1 == s2) && (s1 != s3)) || ((s2 == s3) && (s2 != s1)) || ((s3 == s1) && (s3 != s2))) {
+                        document.getElementById("triangle").innerHTML = "等腰三角形";
+                    }
+                }
+                else {
+                    document.getElementById("triangle").innerHTML = "非三角形";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            <input type="number" id="sideLen1" value="">
+            <input type="number" id="sideLen2" value="">
+            <input type="number" id="sideLen3" value="">
+            <button type="button" onclick="trijudge()"> judge </button>
+            <p id="triangle"></p>
+        </form>
+    </body>
+</html>
